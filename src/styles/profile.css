@@ -1,0 +1,136 @@
+.profile-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 60px;
+  overflow: hidden;
+  
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgb(29, 29, 31);
+  
+}
+
+
+
+.profile-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* added height */
+  background-image: url('../assets/Profile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+
+
+/* Form wrapper */
+.form-wrapper-p {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: rgba(110, 79, 126, 0.5);
+  border-radius: 2%;
+  color: white;
+  z-index: 2;
+}
+
+/* Tile style */
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  border-radius: 14px;
+  color: #efe5e5;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: auto;
+}
+
+.tile:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Tile colors */
+.blue { background-color: rgba(14, 13, 20, 0.5); }
+.green { background-color: rgba(14, 13, 20, 0.5); }
+.purple { background-color: rgba(14, 13, 20, 0.5); }
+.yellow { background-color: rgba(14, 13, 20, 0.5); }
+
+/* Labels and inputs */
+.tile-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(220, 220, 220, 0.1);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Actions / buttons */
+.actions {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button-p {
+  background-color: rgba(82, 30, 98, 0.9);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+}
+
+.tiles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  gap: 1rem; /* spacing between tiles */
+}
+
+@media (max-width: 640px) {
+  .tiles-grid {
+    grid-template-columns: 1fr; /* stack tiles on mobile */
+  }
+}
+
+.input-g{
+  background-color: rgba(220, 220, 220, 0.1);
+  color: white;
+  border: 0px;
+  border-radius: 2px;
+  
+}
+.input-g option{
+  background-color: rgba(220, 220, 220, 0.1);
+  color: black;
+}
+

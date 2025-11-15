@@ -1,0 +1,139 @@
+.background-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgb(20, 20, 23);
+  
+}
+
+
+
+.background-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* added height */
+  background-image: url('../assets/planner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.container {
+
+  position: relative;
+  display: flex;
+  flex-direction: column; /* ensures form stacks vertically */
+  align-items: stretch;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0); /* dark container background */
+  padding: 2rem;
+  border-radius: 1rem;
+  z-index: 1;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0,0,0,0);
+  width: 82vw;
+  max-width: 700px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+.tile-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.form-wrapper {
+   width: 100%;
+  height: 100%;
+  
+  background-color: rgba(128, 138, 175, 0.5);
+  border: none !important;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+  z-index: 2;
+  border-radius: 2%;
+}
+
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(220, 220, 220, 0.1);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  padding: 1rem;
+  border-radius: 14px;
+  color: #efe5e5;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: auto;
+}
+
+.tile:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* colored tiles */
+.blue {background-color: rgba(14, 13, 20, 0.5);}
+.green { background-color: rgba(14, 13, 20, 0.5); }
+.purple {background-color: rgba(14, 13, 20, 0.5); }
+.yellow {background-color: rgba(14, 13, 20, 0.5);}
+
+.actions {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button {
+  background-color: rgba(15, 27, 122, 0.9);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+}
+
+@media (max-width: 640px) {
+  .container { padding: 1.25rem; width: 94vw; }
+  .planner-title { font-size: 1.4rem; }
+  .tile { min-height: 100px; padding: 0.9rem; }
+  .button { width: 100%; }
+}
